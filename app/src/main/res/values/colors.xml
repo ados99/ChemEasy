@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="historyoftheatom">#ef2121</color>
+    <color name="emradiation">#db1818</color>
+    <color name="periodictable">#bf1313</color>
+    <color name="periodictrends">#9b0f0f</color>
+    <color name="electronenergylevels">#7c0909</color>
+    <color name="bonding">#68e20b</color>
+    <color name="vsepr">#59af18</color>
+    <color name="hybridization">#407f10</color>
+    <color name="imfs">#2b560a</color>
+    <color name="solidstructures">#d9e552</color>
+    <color name="phasechanges">#becc22</color>
+    <color name="gaslaws">#96a30d</color>
+    <color name="gasproperties">#6b7501</color>
+    <color name="heatingcurves">#ffba61</color>
+    <color name="eee">#fc9f26</color>
+    <color name="lot">#f28c1f</color>
+    <color name="spontaneity">#ce751c</color>
+    <color name="kinetics">#8cb6f5</color>
+    <color name="acidsandbases">#4d92fa</color>
+    <color name="solubility">#3667b3</color>
+    <color name="titrationcurves">#1e3963</color>
+
+</resources>

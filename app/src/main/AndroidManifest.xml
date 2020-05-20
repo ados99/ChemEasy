@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.chemme">
+
+    <application
+        tools:replace="android:appComponentFactory" android:appComponentFactory="androidx"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:icon= "@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+
+    </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".AtomicTheory.AtomicTheory" />
+        <activity android:name=".AtomicTheory.HistoryOfTheAtom.HistoryOfTheAtom" />
+        <activity android:name=".MolecularStructure.MolecularStructure" />
+        <activity android:name=".MolecularStructure.VSEPR.VSEPR" />
+        <activity android:name=".AtomicTheory.PeriodicTable.PeriodicTable" />
+        <activity android:name=".AtomicTheory.PeriodicTrends.PeriodicTrends" />
+        <activity android:name=".Quizzes.Quizzes.QuizzesMenu" />
+        <activity android:name=".Quizzes.Quizzes.GiantQuiz" />
+        <activity android:name=".AtomicTheory.EMRadiation.EMRadiation" />
+        <activity android:name=".AtomicTheory.ElectronEnergyLevels.ElectronEnergyLevels" />
+        <activity android:name=".MolecularStructure.Bonding.Bonding" />
+        <activity android:name=".MolecularStructure.Hybridization.Hybridization" />
+        <activity android:name=".StatesOfMatter.StatesOfMatter" />
+        <activity android:name=".StatesOfMatter.SolidStructure.SolidStructure" />
+        <activity android:name=".StatesOfMatter.PhaseChanges.PhaseChanges" />
+        <activity android:name=".StatesOfMatter.GasLaws.GasLaws" />
+        <activity android:name=".StatesOfMatter.GasProperties.GasProperties" />
+        <activity android:name=".Thermodynamics.Thermodynamics" />
+        <activity android:name=".Thermodynamics.HeatingCurves.HeatingCurves" />
+        <activity android:name=".Thermodynamics.EnergyEnthalpyAndEntropy.EnergyEnthalpyAndEntropy" />
+        <activity android:name=".Thermodynamics.LawsOfThermodynamics.LawsOfThermodynamics" />
+        <activity android:name=".Thermodynamics.Spontaneity.Spontaneity" />
+        <activity android:name=".Equilibria.Equilibria" />
+        <activity android:name=".Equilibria.Kinetics.Kinetics" />
+        <activity android:name=".Equilibria.AcidsAndBases.AcidsAndBases" />
+        <activity android:name=".Equilibria.Solubility.Solubility" />
+        <activity android:name=".Equilibria.TitrationCurves.TitrationCurves" />
+        <activity android:name=".About.AboutTheApp" />
+        <activity android:name=".About.Disclaimer" />
+        <activity android:name=".About.References" />
+        <activity
+            android:name=".MolecularStructure.IMFs.IMFs"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".About.About"></activity>
+    </application>
+
+</manifest>

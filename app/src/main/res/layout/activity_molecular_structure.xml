@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chemme.MolecularStructure.MolecularStructure">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/molecularstructure"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#000000"
+                android:gravity="center"
+                android:text="Molecular Structure"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                tools:fontFamily="@font/iceland" />
+
+            <Button
+                android:id="@+id/bondingbutton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/bonding"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:paddingTop="30dp"
+                android:text="Bonding"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="27sp"
+                tools:fontFamily="@font/iceland" />
+
+            <Button
+                android:id="@+id/vseprbutton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/vsepr"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:paddingTop="30dp"
+                android:text="VSEPR"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="27sp"
+                tools:fontFamily="@font/iceland" />
+
+            <Button
+                android:id="@+id/hybridizationbutton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/hybridization"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:paddingTop="30dp"
+                android:text="Hybridization"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="27sp"
+                tools:fontFamily="@font/iceland" />
+
+            <Button
+                android:id="@+id/imfbutton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/imfs"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:paddingTop="30dp"
+                android:text="Intermolecular Forces"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="27sp"
+                tools:fontFamily="@font/iceland" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

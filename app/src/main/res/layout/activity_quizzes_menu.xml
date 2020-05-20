@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.example.chemme.Quizzes.Quizzes.QuizzesMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Quizzes"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#000000"
+                    android:gravity="center"
+                    android:text="Quizzes"
+                    android:textColor="@android:color/white"
+                    android:textSize="40sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/historyoftheatombuttonquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/historyoftheatom"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="History of the Atom Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/emradiationquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/emradiation"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="EM Radiation Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/periodictablequizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/periodictable"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Periodic Table Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/periodictrendsquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/periodictrends"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Periodic Trends Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/electronenergylevelsquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/electronenergylevels"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Electron Energy Levels Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/bondingquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/bonding"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Bonding Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/hybridizationquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/hybridization"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Hybridization Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/imfsquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/imfs"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Intermolecular Forces Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/solidstructuresquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/solidstructures"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Solid Structures Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/gaslawsquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gaslaws"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Gas Laws Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+
+                <Button
+                android:id="@+id/gaspropertiesquizbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gasproperties"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:paddingTop="13dp"
+                android:text="Gas Properties Quiz"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="27sp"
+                tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/lotquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lot"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Laws of Thermodynamics Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/spontaneityquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/spontaneity"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Spontaneity Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/acidsandbasesquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/acidsandbases"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Acids and Bases Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+                <Button
+                    android:id="@+id/solubilityquizbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/solubility"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="13dp"
+                    android:text="Solubility Quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    tools:fontFamily="@font/iceland" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
