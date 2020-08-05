@@ -19,9 +19,9 @@ public class SecondOrder extends Fragment {
         View v = inflater.inflate(R.layout.secondorder, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.secondorder);
-        txt.setTypeface(font);
+
         TextView txt1 = (TextView) v.findViewById(R.id.secondorder1);
-        txt1.setTypeface(font);
+
         return v;
 
     }

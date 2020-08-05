@@ -23,12 +23,12 @@ public class Bohr extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Niels Bohr");
-        txt.setTypeface(font);
+
         ImageView image = (ImageView)v.findViewById(R.id.image);
         image.setImageDrawable(getResources().getDrawable(R.drawable.bohr));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.bohr_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

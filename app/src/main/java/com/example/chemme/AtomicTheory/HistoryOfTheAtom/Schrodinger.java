@@ -23,12 +23,12 @@ public class Schrodinger extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Erwin Schrodinger");
-        txt.setTypeface(font);
+
         ImageView image = (ImageView)v.findViewById(R.id.image);
         image.setImageDrawable(getResources().getDrawable(R.drawable.schrodinger));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.schrodinger_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

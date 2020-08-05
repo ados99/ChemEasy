@@ -1,12 +1,15 @@
 package com.example.chemme.Equilibria.AcidsAndBases;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.chemme.R;
 
@@ -16,12 +19,19 @@ import com.example.chemme.R;
 
 public class StrongAndWeakBases extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.strongandweakbases, container, false);
+        View v = inflater.inflate(R.layout.generic_slide, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
-        TextView txt = (TextView) v.findViewById(R.id.strongandweakbases);
-        txt.setTypeface(font);
-        TextView txt1 = (TextView) v.findViewById(R.id.strongandweakbases1);
-        txt1.setTypeface(font);
+        TextView txt = (TextView) v.findViewById(R.id.title);
+        txt.setText("Strong and Weak Bases");
+
+        txt.setTextSize(30);
+        txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.acidsandbases)));
+        ImageView im = (ImageView)v.findViewById(R.id.image);
+        im.requestLayout();
+        im.setImageDrawable(getResources().getDrawable(R.drawable.strongbase));
+        TextView txt1 = (TextView) v.findViewById(R.id.content);
+        txt1.setText(getResources().getString(R.string.strong_and_weak_bases_content));
+
         return v;
 
     }

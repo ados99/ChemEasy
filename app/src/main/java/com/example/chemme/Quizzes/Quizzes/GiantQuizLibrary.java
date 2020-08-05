@@ -1,10 +1,5 @@
 package com.example.chemme.Quizzes.Quizzes;
 
-import android.content.Context;
-import android.content.res.Resources;
-
-import com.example.chemme.R;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -219,7 +214,7 @@ public class GiantQuizLibrary {
             {"NaCl", "CO₂", "Copper","SiO₂"},
             {"farthest, fastest", "volume and temperature", "Volume","Universal gas constant"},
             {"Average kinetic energy", "H₂", "CO₂"},
-            {"first","zeroth", "negative ΔH and negative ΔS"},
+            {"first","zeroth", "200 K"},
             {"occurs without an external input of energy","reaction is spontaneous in forward direction", "negative ΔH and negative ΔS"},
             {"NO₃⁻","4.4", "HI", "NH₃"},
             {"reaction shifts to right to consume A","All of the above", "Liquid", "Henry's Law"}

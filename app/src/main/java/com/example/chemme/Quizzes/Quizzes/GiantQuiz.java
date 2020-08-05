@@ -1,11 +1,15 @@
 package com.example.chemme.Quizzes.Quizzes;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +21,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /**
  * Created by Atharva on 11/14/2019.
@@ -32,12 +38,15 @@ public class GiantQuiz extends AppCompatActivity {
     private Button choice2;
     private Button choice3;
     private Button choice4;
+    private Button[] buttons;
     private boolean ending = false;
 
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
 
+    final String RED = "#ad1100";
+    final String GREEN = "#33a813";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,119 +67,92 @@ public class GiantQuiz extends AppCompatActivity {
         scoreView.setText("Score: 0" + "/" + mQuestionLibrary.getLength(q));
         questionView = (TextView) findViewById(R.id.question);
         questionView.setTextSize(25);
+
+        buttons = new Button[4];
         choice1 = (Button) findViewById(R.id.choice1);
         choice2 = (Button) findViewById(R.id.choice2);
         choice3 = (Button) findViewById(R.id.choice3);
         choice4 = (Button) findViewById(R.id.choice4);
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
-        choice1.setTypeface(myTypeFace);
-        choice2.setTypeface(myTypeFace);
-        choice3.setTypeface(myTypeFace);
-        choice4.setTypeface(myTypeFace);
-        scoreView.setTypeface(myTypeFace);
-        questionView.setTypeface(myTypeFace);
-        quizView.setTypeface(myTypeFace);
+
+        buttons[0] = choice1;
+        buttons[1] = choice2;
+        buttons[2] = choice3;
+        buttons[3] = choice4;
+
+
         updateQuestion(q,s);
 
-        //Start of Button Listener for Button1
-        choice1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //My logic for Button goes in hereif(ending)
-                if (choice1.getText() == mAnswer) {
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    scoreView.setText("Score:" + mScore + "/" + mQuestionLibrary.getLength(q));
-                    //This line of code is optiona
-                    correctAnswer();
-                } else {
-                    showRightAnswer();
+        for(Button b: buttons)
+        {
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //My logic for Button goes in hereif(ending)
+                    b.setTextColor(Color.WHITE);
+                    if (b.getText() == mAnswer) {
+                        b.setBackgroundColor(Color.parseColor(GREEN));
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+                        scoreView.setText("Score: " + mScore + "/" + mQuestionLibrary.getLength(q));
+                        //This line of code is optiona
+                        correctAnswer();
+                    } else {
+                        b.setBackgroundColor(Color.parseColor(RED));
+                        showRightAnswer();
+                    }
+                    for(Button c:buttons)
+                    {
+                        if(c.getText() == mAnswer)
+                        {
+                            c.setBackgroundColor(Color.parseColor(GREEN));
+                            c.setTextColor(Color.WHITE);
+                        }
+                        c.setEnabled(false);
+                    }
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(Button c:buttons)
+                        {
+                            c.setEnabled(true);
+                            c.setBackgroundColor(Color.WHITE);
+                            c.setTextColor(Color.BLACK);
+                        }
+                        updateQuestion(q, s);
+                    }
+                },2000);
 
                 }
-                updateQuestion(q, s);
-            }
-        });
-
-        //End of Button Listener for Button1
-
-        //Start of Button Listener for Button2
-        choice2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //My logic for Button goes in here
-                boolean wrong = false;
-                if (choice2.getText() == mAnswer) {
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    scoreView.setText("Score:" + mScore + "/" + mQuestionLibrary.getLength(q));
-                    //This line of code is optiona
-                    correctAnswer();
-                } else {
-                    showRightAnswer();
-
-                }
-                updateQuestion(q, s);
-            }
-        });
-
-        //End of Button Listener for Button2
-
-
-        //Start of Button Listener for Button3
-        choice3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //My logic for Button goes in here
-                if (choice3.getText() == mAnswer) {
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    scoreView.setText("Score:" + mScore + "/" + mQuestionLibrary.getLength(q));
-                    //This line of code is optiona
-                    correctAnswer();
-                } else {
-                    showRightAnswer();
-
-                }
-                    updateQuestion(q, s);
-            }
-
-        });
-        choice4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //My logic for Button goes in hereb
-                if (choice4.getText() == mAnswer) {
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    scoreView.setText("Score:" + mScore + "/" + mQuestionLibrary.getLength(q));
-                    //This line of code is optiona
-                    correctAnswer();
-                } else {
-                    showRightAnswer();
-
-                }
-                updateQuestion(q, s);
-            }
-        });
-
-        //End of Button Listener for Button3
+            });
+        }
 
     }
 
     public void correctAnswer()
     {
-        Toast.makeText( GiantQuiz.this, "Correct!", Toast.LENGTH_SHORT).show();
+
+        Toast toast = Toast.makeText( GiantQuiz.this, "Correct!", Toast.LENGTH_SHORT);
+        LinearLayout toastLayout = (LinearLayout) toast.getView();
+        TextView toastTV = (TextView) toastLayout.getChildAt(0);
+        toastTV.setTextColor(Color.GREEN);
+        handleToast(toast);
     }
 
     public void showRightAnswer()
     {
-        Toast.makeText( GiantQuiz.this, "Wrong: Correct answer was " + mAnswer, Toast.LENGTH_SHORT).show();
+        Toast toast = Toast.makeText( GiantQuiz.this, "Wrong: Correct answer was " + mAnswer, Toast.LENGTH_SHORT);
+        LinearLayout toastLayout = (LinearLayout) toast.getView();
+        TextView toastTV = (TextView) toastLayout.getChildAt(0);
+        toastTV.setTextColor(Color.RED);
+        handleToast(toast);
     }
 
 
     private void updateScore(int point) {
-        scoreView.setText("Score: " + mScore + "/4");
+        scoreView.setText("Score:  " + mScore + "/4");
     }
+
+
 
     private void updateQuestion(int q, final String s) {
         if (mQuestionNumber < mQuestionLibrary.getLength(q)) {
@@ -202,18 +184,32 @@ public class GiantQuiz extends AppCompatActivity {
             choice3.setVisibility(View.INVISIBLE);
             choice4.setVisibility(View.INVISIBLE);
             scoreView.setVisibility(View.INVISIBLE);
+
         }
     }
     public void openQuizzes()
     {
+        finish();
         Intent intent = new Intent(this, QuizzesMenu.class);
         startActivity(intent);
     }
     public void openQuiz(String s)
     {
+        finish();
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz", s);
         startActivity(intent);
+    }
+
+    public void handleToast(Toast toast)
+    {
+        LinearLayout toastLayout = (LinearLayout) toast.getView();
+        TextView toastTV = (TextView) toastLayout.getChildAt(0);
+        View view = toast.getView();
+        view.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
+        toastTV.setTextSize(25);
+        toast.setGravity(Gravity.BOTTOM, 0, 95);
+        toast.show();
     }
 
     public Map<String, List<Integer>> getColors()
@@ -235,6 +231,15 @@ public class GiantQuiz extends AppCompatActivity {
         colors.put("Acids and Bases",new ArrayList<Integer>(){{add(R.color.acidsandbases); add(13);}});
         colors.put("Solubility",new ArrayList<Integer>(){{add(R.color.solubility); add(14);}});
         return colors;
+    }
+
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+    @Override
+    public void onBackPressed() {
+        Intent setIntent = new Intent(this, QuizzesMenu.class);
+        startActivity(setIntent);
     }
 
 }

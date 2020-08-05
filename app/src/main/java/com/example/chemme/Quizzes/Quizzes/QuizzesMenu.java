@@ -1,15 +1,18 @@
 package com.example.chemme.Quizzes.Quizzes;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.chemme.MainActivity;
 import com.example.chemme.R;
+
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 
 public class QuizzesMenu extends AppCompatActivity {
@@ -140,24 +143,19 @@ public class QuizzesMenu extends AppCompatActivity {
             }
         });
 
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
-        periodictablequizbutton.setTypeface(myTypeFace);
-        bondingquizbutton.setTypeface(myTypeFace);
-        periodictrendsquizbutton.setTypeface(myTypeFace);
-        imfsquizbutton.setTypeface(myTypeFace);
-        historyoftheatomquizbutton.setTypeface(myTypeFace);
-        emradiationquizbutton.setTypeface(myTypeFace);
-        electronenergylevelsquizbutton.setTypeface(myTypeFace);
-        hybridizationquizbutton.setTypeface(myTypeFace);
-        solidstructuresquizbutton.setTypeface(myTypeFace);
-        gaslawsquizbutton.setTypeface(myTypeFace);
-        gaspropertiesquizbutton.setTypeface(myTypeFace);
-        spontaneityquizbutton.setTypeface(myTypeFace);
-        lotquizbutton.setTypeface(myTypeFace);
-        acidsandbasesquizbutton.setTypeface(myTypeFace);
-        solubilityquizbutton.setTypeface(myTypeFace);
-        TextView myTextView1 = findViewById(R.id.Quizzes);
-        myTextView1.setTypeface(myTypeFace);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }
+            });
+        }
+
     }
     public void openPeriodicTableQuiz()
     {
@@ -167,30 +165,35 @@ public class QuizzesMenu extends AppCompatActivity {
     }
     public void openBondingQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Bonding");
         startActivity(intent);
     }
     public void openPeriodicTrendsQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Periodic Trends");
         startActivity(intent);
     }
     public void openIMFSQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Intermolecular Forces");
         startActivity(intent);
     }
     public void openHistoryoftheAtomQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","History of the Atom");
         startActivity(intent);
     }
     public void openEMRadiationQuiz()
     {
+        finish();
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","EM Radiation");
         startActivity(intent);
@@ -198,6 +201,7 @@ public class QuizzesMenu extends AppCompatActivity {
 
    public void openElectronEnergyLevelsQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Electron Energy Levels");
         startActivity(intent);
@@ -210,6 +214,7 @@ public class QuizzesMenu extends AppCompatActivity {
     }
     public void openSolidStructuresQuiz()
     {
+
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Solid Structures");
         startActivity(intent);
@@ -249,5 +254,20 @@ public class QuizzesMenu extends AppCompatActivity {
         Intent intent = new Intent(this, GiantQuiz.class);
         intent.putExtra("Quiz","Solubility");
         startActivity(intent);
+    }
+
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+    public void openMain()
+    {
+        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent setIntent = new Intent(this,MainActivity.class);
+        startActivity(setIntent);
     }
 }

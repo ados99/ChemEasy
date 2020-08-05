@@ -19,9 +19,9 @@ public class PhaseChangesTable extends Fragment{
             View v = inflater.inflate(R.layout.phasechangestable, container, false);
             Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
             TextView txt = (TextView) v.findViewById(R.id.phasechangestable);
-            txt.setTypeface(font);
+
             TextView txt1 = (TextView) v.findViewById(R.id.phasechangestable2);
-            txt1.setTypeface(font);
+
             return v;
 
         }

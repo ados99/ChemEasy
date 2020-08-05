@@ -1,5 +1,6 @@
 package com.example.chemme.About;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -8,11 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import com.example.chemme.MolecularStructure.MolecularStructure;
+import com.example.chemme.MainActivity;
 import com.example.chemme.R;
 
-import org.w3c.dom.Text;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public class About extends AppCompatActivity {
     private TextView about;
@@ -30,7 +32,18 @@ public class About extends AppCompatActivity {
         abouttheappbutton = findViewById(R.id.abouttheapp);
         disclaimerbutton = findViewById(R.id.disclaimer);
         referencesbutton = findViewById(R.id.references);
-        about = findViewById(R.id.abouttext);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }
+            });
+        }
         abouttheappbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -49,10 +62,10 @@ public class About extends AppCompatActivity {
                 openReferences();
             }
         });
-        abouttheappbutton.setTypeface(myTypeFace);
-        disclaimerbutton.setTypeface(myTypeFace);
-        referencesbutton.setTypeface(myTypeFace);
-        about.setTypeface(myTypeFace);
+
+
+
+
 
     }
 
@@ -71,6 +84,15 @@ public class About extends AppCompatActivity {
     public void openReferences()
     {
         Intent intent = new Intent(this, References.class);
+        startActivity(intent);
+    }
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+
+    public void openMain()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

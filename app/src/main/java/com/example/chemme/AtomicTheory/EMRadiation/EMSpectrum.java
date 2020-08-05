@@ -23,7 +23,7 @@ public class EMSpectrum extends Fragment {
         View v = inflater.inflate(R.layout.generic_slide, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
-        txt.setTypeface(font);
+
         txt.setText("Electromagnetic Spectrum");
         txt.setTextSize(30);
         txt.setBackgroundColor(Color.parseColor(getResources().getString(0 + R.color.emradiation)));
@@ -33,7 +33,7 @@ public class EMSpectrum extends Fragment {
         im.getLayoutParams().height = (int) getResources().getDimension(R.dimen.em_height);
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(R.string.em_spectrum_content);
-        txt1.setTypeface(font);
+
         return v;
     }
 }

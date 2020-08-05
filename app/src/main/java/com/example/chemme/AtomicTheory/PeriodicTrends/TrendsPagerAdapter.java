@@ -24,10 +24,12 @@ public class TrendsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new AtomicRadius();
             case 1:
-                return new IonizationEnergy();
+                return new Electronegativity();
             case 2:
-                return new ElectronAffinity();
+                return new IonizationEnergy();
             case 3:
+                return new ElectronAffinity();
+            case 4:
                 return new EndSlide(R.color.periodictrends, PeriodicTrends.class, "Periodic Trends");
             default:
                 break;
@@ -36,6 +38,6 @@ public class TrendsPagerAdapter extends FragmentPagerAdapter {
     }
     public int getCount()
     {
-        return 4;
+        return 5;
     }
 }

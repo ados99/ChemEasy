@@ -31,18 +31,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/top"
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:background="#ffffff"
-                        android:textColor="@android:color/black"
-                        android:gravity="center"
-                        android:text="References"
-                        android:textSize="40sp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:fontFamily="@font/iceland"
-                        tools:layout_editor_absoluteX="0dp" />
+                        android:background="@android:color/white"
+                        android:minHeight="?attr/actionBarSize"
+                        app:theme="@style/ToolbarBlackArrow"
+                        >
+                        <TextView
+                            android:id="@+id/toolbarTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="References"
+                            android:gravity = "center"
+                            android:layout_marginRight="?android:attr/actionBarSize"
+                            android:textColor="@android:color/black"
+                            android:textSize = "30sp"/>
+                    </androidx.appcompat.widget.Toolbar>
 
                     <TextView
                         android:id="@+id/text"
@@ -58,7 +64,7 @@
                         android:layout_marginTop="16dp"
                         android:text="@string/references_content"
                         android:textColor="@android:color/white"
-                        android:textSize="20sp" />
+                        android:textSize="30sp" />
 
                 </LinearLayout>
             </ScrollView>

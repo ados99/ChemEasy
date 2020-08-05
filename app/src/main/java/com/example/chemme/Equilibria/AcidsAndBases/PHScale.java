@@ -1,12 +1,15 @@
 package com.example.chemme.Equilibria.AcidsAndBases;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.chemme.R;
 
@@ -16,12 +19,19 @@ import com.example.chemme.R;
 
 public class PHScale extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.phscale, container, false);
+        View v = inflater.inflate(R.layout.generic_slide, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
-        TextView txt = (TextView) v.findViewById(R.id.phscale);
-        txt.setTypeface(font);
-        TextView txt1 = (TextView) v.findViewById(R.id.phscale1);
-        txt1.setTypeface(font);
+        TextView txt = (TextView) v.findViewById(R.id.title);
+        txt.setText("pH Scale");
+
+        txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.acidsandbases)));
+        ImageView im = (ImageView)v.findViewById(R.id.image);
+        im.requestLayout();
+        im.setImageDrawable(getResources().getDrawable(R.drawable.phscale));
+        im.getLayoutParams().width = (int) getResources().getDimension(R.dimen.em_width);
+        TextView txt1 = (TextView) v.findViewById(R.id.content);
+        txt1.setText(getResources().getString(R.string.ph_scale_content));
+
         return v;
 
     }

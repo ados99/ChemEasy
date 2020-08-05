@@ -1,25 +1,29 @@
 package com.example.chemme.Thermodynamics;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.chemme.MainActivity;
 import com.example.chemme.R;
 import com.example.chemme.Thermodynamics.EnergyEnthalpyAndEntropy.EnergyEnthalpyAndEntropy;
 import com.example.chemme.Thermodynamics.HeatingCurves.HeatingCurves;
 import com.example.chemme.Thermodynamics.LawsOfThermodynamics.LawsOfThermodynamics;
-import com.example.chemme.Thermodynamics.LawsOfThermodynamics.ZerothLaw;
 import com.example.chemme.Thermodynamics.Spontaneity.Spontaneity;
+
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /**
  * Created by Atharva on 8/16/2018.
  */
 
-public class Thermodynamics extends Activity {
+public class Thermodynamics extends AppCompatActivity {
     private Button heatingcurvebutton;
     private Button spontbutton;
     private Button lawsbutton;
@@ -31,8 +35,19 @@ public class Thermodynamics extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thermodynamics);
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
-        TextView myTextView4 = findViewById(R.id.thermodynamics);
-        myTextView4.setTypeface(myTypeFace);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }});
+            }
+
         heatingcurvebutton = findViewById(R.id.heatingcurves);
         heatingcurvebutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
@@ -40,9 +55,9 @@ public class Thermodynamics extends Activity {
                 openHeatingCurves();
             }
         });
-        heatingcurvebutton.setTypeface(myTypeFace);
+
         energybutton = findViewById(R.id.energyenthalpyandentropy);
-        energybutton.setTypeface(myTypeFace);
+
         energybutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -50,7 +65,7 @@ public class Thermodynamics extends Activity {
             }
         });
         lawsbutton =  findViewById(R.id.thermolaws);
-        lawsbutton.setTypeface(myTypeFace);
+
         lawsbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -58,7 +73,7 @@ public class Thermodynamics extends Activity {
             }
         });
         spontbutton =  findViewById(R.id.spontaneity);
-        spontbutton.setTypeface(myTypeFace);
+
         spontbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -84,9 +99,18 @@ public class Thermodynamics extends Activity {
         startActivity(intent);
     }
 
+    public void openMain()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void openSpontaneity()
     {
         Intent intent = new Intent(this, Spontaneity.class);
         startActivity(intent);
+    }
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 }

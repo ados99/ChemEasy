@@ -1,20 +1,24 @@
 package com.example.chemme.StatesOfMatter;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.app.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.chemme.MainActivity;
 import com.example.chemme.R;
 import com.example.chemme.StatesOfMatter.GasLaws.GasLaws;
 import com.example.chemme.StatesOfMatter.GasProperties.GasProperties;
 import com.example.chemme.StatesOfMatter.PhaseChanges.PhaseChanges;
 import com.example.chemme.StatesOfMatter.SolidStructure.SolidStructure;
 
-public class StatesOfMatter extends Activity {
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
+public class StatesOfMatter extends AppCompatActivity {
     private Button button;
     private Button phasechangesbutton;
     private Button gaslawsbutton;
@@ -25,17 +29,22 @@ public class StatesOfMatter extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_states_of_matter);
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
-        TextView myTextView = findViewById(R.id.solidstructurebutton);
-        TextView myTextView2 = findViewById(R.id.phasechangesbutton);
-        TextView myTextView3 = findViewById(R.id.gaslawsbutton);
-        TextView myTextView4 = findViewById(R.id.gaspropertiesbutton);
-        TextView myTextView5 = findViewById(R.id.statesofmatter);
-        myTextView.setTypeface(myTypeFace);
-        myTextView2.setTypeface(myTypeFace);
-        myTextView3.setTypeface(myTypeFace);
-        myTextView4.setTypeface(myTypeFace);
-        myTextView5.setTypeface(myTypeFace);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }
+            });
+        };
+
+
+
+
         button = findViewById(R.id.solidstructurebutton);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
@@ -63,7 +72,10 @@ public class StatesOfMatter extends Activity {
             {
                 openGasProperties();
             }
+
+
         });
+
     }
     public void openSolidStructure()
     {
@@ -84,5 +96,16 @@ public class StatesOfMatter extends Activity {
     {
         Intent intent = new Intent(this, GasProperties.class);
         startActivity(intent);
+    }
+
+    public void openMain()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 }

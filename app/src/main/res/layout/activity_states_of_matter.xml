@@ -22,16 +22,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/statesofmatter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="#000000"
-                    android:gravity="center"
-                    android:text="States of Matter"
-                    android:textColor="@android:color/white"
-                    android:textSize="40sp"
-                    tools:fontFamily="@font/iceland" />
+                    android:background="@android:color/black"
+                    android:minHeight="?attr/actionBarSize"
+                    app:theme="@style/ToolbarTheme"
+                    >
+                    <TextView
+                        android:id="@+id/toolbarTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Atomic Theory"
+                        android:gravity = "center"
+                        android:layout_marginRight="?android:attr/actionBarSize"
+                        android:textColor="@android:color/white"
+                        android:textSize = "35sp"/>
+                </androidx.appcompat.widget.Toolbar>
 
                 <Button
                     android:id="@+id/solidstructurebutton"

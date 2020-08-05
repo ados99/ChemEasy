@@ -1,12 +1,13 @@
 package com.example.chemme.AtomicTheory;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.app.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.chemme.AtomicTheory.EMRadiation.EMRadiation;
 import com.example.chemme.AtomicTheory.ElectronEnergyLevels.ElectronEnergyLevels;
@@ -15,7 +16,9 @@ import com.example.chemme.AtomicTheory.PeriodicTable.PeriodicTable;
 import com.example.chemme.AtomicTheory.PeriodicTrends.PeriodicTrends;
 import com.example.chemme.R;
 
-public class AtomicTheory extends Activity {
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
+public class AtomicTheory extends AppCompatActivity {
     private Button button;
     private Button periodicbutton;
     private Button trendsbutton;
@@ -25,6 +28,9 @@ public class AtomicTheory extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atomic_theory);
+
+
+
         button = findViewById(R.id.historyoftheatombutton);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
@@ -61,22 +67,24 @@ public class AtomicTheory extends Activity {
             }
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
+    }
 
-
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
-        TextView myTextView = findViewById(R.id.historyoftheatombutton);
-        myTextView.setTypeface(myTypeFace);
-        TextView myTextView2 = findViewById(R.id.theperiodictablebutton);
-        myTextView2.setTypeface(myTypeFace);
-        TextView myTextView3 = findViewById(R.id.periodictrendsbutton);
-        myTextView3.setTypeface(myTypeFace);
-        TextView myTextView4 = findViewById(R.id.electonenergylevelsbutton);
-        myTextView4.setTypeface(myTypeFace);
-        TextView myTextView5 = findViewById(R.id.atomictheory);
-        myTextView5.setTypeface(myTypeFace);
-        TextView myTextView6 = findViewById(R.id.electromagnetic);
-        myTextView6.setTypeface(myTypeFace);
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
     public void openHistoryOfTheAtom()
@@ -108,7 +116,5 @@ public class AtomicTheory extends Activity {
         Intent intent = new Intent(this, ElectronEnergyLevels.class);
         startActivity(intent);
     }
-
-
 
 }

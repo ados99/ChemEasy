@@ -24,16 +24,23 @@
            >
 
 
-            <TextView
-                android:id="@+id/ChemMe"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="#000000"
-                android:gravity="center"
-                android:text="ChemEasy"
-                android:textColor="@android:color/white"
-                android:textSize="40sp"
-                tools:fontFamily="@font/iceland" />
+                android:background="@android:color/black"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+                <TextView
+                    android:id="@+id/toolbarTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ChemEasy"
+                    android:gravity = "center"
+                    android:textColor="@android:color/white"
+                    android:textSize = "35sp"/>
+            </androidx.appcompat.widget.Toolbar>
+
 
             <Button
                 android:id="@+id/atomictheorybutton"
@@ -131,6 +138,7 @@
                 android:textAllCaps="false"
                 android:textSize="27sp"
                 tools:fontFamily="@font/iceland" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,12 +23,12 @@ public class Rutherford extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Ernst Rutherford");
-        txt.setTypeface(font);
+
         ImageView image = (ImageView)v.findViewById(R.id.image);
         image.setImageDrawable(getResources().getDrawable(R.drawable.rutherford));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.rutherford_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

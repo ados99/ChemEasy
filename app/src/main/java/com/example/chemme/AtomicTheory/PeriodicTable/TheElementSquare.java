@@ -21,7 +21,7 @@ public class TheElementSquare extends Fragment {
         View v = inflater.inflate(R.layout.theelementsquare, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.elementsquare);
-        txt.setTypeface(font);
+
         return v;
     }
 }

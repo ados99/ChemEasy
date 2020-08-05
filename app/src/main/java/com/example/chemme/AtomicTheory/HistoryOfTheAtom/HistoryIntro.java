@@ -20,9 +20,11 @@ public class HistoryIntro extends Fragment {
         View v = inflater.inflate(R.layout.generic_slide, container, false);
         TextView txt = (TextView) v.findViewById(R.id.title);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
-        txt.setTypeface(font);
+
         TextView txt1 = (TextView) v.findViewById(R.id.content);
-        txt1.setTypeface(font);
+
         return v;
+
+
     }
 }

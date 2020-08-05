@@ -19,9 +19,9 @@ public class FirstOrder extends Fragment {
         View v = inflater.inflate(R.layout.firstorder, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.firstorder);
-        txt.setTypeface(font);
+
         TextView txt1 = (TextView) v.findViewById(R.id.firstorder1);
-        txt1.setTypeface(font);
+
         return v;
 
     }

@@ -19,7 +19,7 @@ public class VSEPRTable2 extends Fragment {
         View v = inflater.inflate(R.layout.vseprtable2, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.vseprtable2);
-        txt.setTypeface(font);
+
         return v;
     }
 }

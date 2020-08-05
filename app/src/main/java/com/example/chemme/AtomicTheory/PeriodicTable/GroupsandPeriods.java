@@ -24,7 +24,7 @@ public class GroupsandPeriods extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Groups and Periods");
-        txt.setTypeface(font);
+
         txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.periodictable)));
         ImageView im = (ImageView)v.findViewById(R.id.image);
         im.requestLayout();
@@ -33,7 +33,7 @@ public class GroupsandPeriods extends Fragment {
         im.setImageDrawable(getResources().getDrawable(R.drawable.groupsandperiods));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.groups_and_periods_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

@@ -24,7 +24,7 @@ public class PartsOfWave extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Parts of a Wave");
-        txt.setTypeface(font);
+
         txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.emradiation)));
         ImageView im = (ImageView)v.findViewById(R.id.image);
         im.requestLayout();
@@ -33,7 +33,7 @@ public class PartsOfWave extends Fragment {
         im.setImageDrawable(getResources().getDrawable(R.drawable.partsofawave));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.parts_of_wave_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

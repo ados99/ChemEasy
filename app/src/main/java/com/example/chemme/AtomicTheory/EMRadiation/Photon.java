@@ -24,7 +24,7 @@ public class Photon extends Fragment {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
         txt.setText("Photon");
-        txt.setTypeface(font);
+
         txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.emradiation)));
         ImageView im = (ImageView)v.findViewById(R.id.image);
         im.requestLayout();
@@ -33,7 +33,7 @@ public class Photon extends Fragment {
         im.setImageDrawable(getResources().getDrawable(R.drawable.photon));
         TextView txt1 = (TextView) v.findViewById(R.id.content);
         txt1.setText(getResources().getString(R.string.photon_content));
-        txt1.setTypeface(font);
+
         return v;
     }
 }

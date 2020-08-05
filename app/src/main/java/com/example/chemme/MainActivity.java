@@ -1,11 +1,13 @@
 package com.example.chemme;
+
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.app.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chemme.About.About;
 import com.example.chemme.AtomicTheory.AtomicTheory;
@@ -15,7 +17,9 @@ import com.example.chemme.Quizzes.Quizzes.QuizzesMenu;
 import com.example.chemme.StatesOfMatter.StatesOfMatter;
 import com.example.chemme.Thermodynamics.Thermodynamics;
 
-public class MainActivity extends Activity {
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
+public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button button2;
     private Button button3;
@@ -26,6 +30,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -38,7 +44,7 @@ public class MainActivity extends Activity {
                 openAtomicTheory();
             }
         });
-        button.setTypeface(myTypeFace);
+
 
 
         button2 = findViewById(R.id.molecularstructurebutton);
@@ -48,7 +54,7 @@ public class MainActivity extends Activity {
                 openMolecularStructure();
             }
         });
-        button2.setTypeface(myTypeFace);
+
 
         button3 = findViewById(R.id.quizzesbutton);
         button3.setOnClickListener(new View.OnClickListener(){
@@ -57,7 +63,6 @@ public class MainActivity extends Activity {
                 openQuizzes();
             }
         });
-        button3.setTypeface(myTypeFace);
 
         button4 = findViewById(R.id.statesofmatterbutton);
         button4.setOnClickListener(new View.OnClickListener(){
@@ -66,7 +71,7 @@ public class MainActivity extends Activity {
                 openStatesOfMatter();
             }
         });
-        button4.setTypeface(myTypeFace);
+
 
         button5 = findViewById(R.id.thermochemistrybutton);
         button5.setOnClickListener(new View.OnClickListener(){
@@ -75,7 +80,7 @@ public class MainActivity extends Activity {
                 openThermodynamics();
             }
         });
-        button5.setTypeface(myTypeFace);
+
 
         button7 = findViewById(R.id.aboutbutton);
         button7.setOnClickListener(new View.OnClickListener(){
@@ -84,7 +89,7 @@ public class MainActivity extends Activity {
                 openAbout();
             }
         });
-        button7.setTypeface(myTypeFace);
+
 
         button6 = findViewById(R.id.equilibriabutton);
         button6.setOnClickListener(new View.OnClickListener(){
@@ -93,12 +98,6 @@ public class MainActivity extends Activity {
                 openEquilibria();
             }
         });
-        button6.setTypeface(myTypeFace);
-
-        TextView myTextView6 = findViewById(R.id.aboutbutton);
-        TextView myTextView8 = findViewById(R.id.ChemMe);
-        myTextView6.setTypeface(myTypeFace);
-        myTextView8.setTypeface(myTypeFace);
 
     }
     public void openAtomicTheory()
@@ -138,6 +137,10 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
 
 
 }

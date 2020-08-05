@@ -1,28 +1,29 @@
 package com.example.chemme.Equilibria;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.chemme.Equilibria.AcidsAndBases.AcidsAndBases;
 import com.example.chemme.Equilibria.Kinetics.Kinetics;
 import com.example.chemme.Equilibria.Solubility.Solubility;
 import com.example.chemme.Equilibria.TitrationCurves.TitrationCurves;
+import com.example.chemme.MainActivity;
 import com.example.chemme.R;
-import com.example.chemme.Thermodynamics.EnergyEnthalpyAndEntropy.EnergyEnthalpyAndEntropy;
-import com.example.chemme.Thermodynamics.LawsOfThermodynamics.LawsOfThermodynamics;
 
-import org.w3c.dom.Text;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /**
  * Created by Atharva on 8/16/2018.
  */
 
-public class Equilibria extends Activity {
+public class Equilibria extends AppCompatActivity {
     private Button kineticsbutton;
     private Button acidsandbasesbutton;
     private Button solubilitybutton;
@@ -35,7 +36,7 @@ public class Equilibria extends Activity {
         setContentView(R.layout.activity_equilibria);
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
         acidsandbasesbutton = findViewById(R.id.acidsandbases);
-        acidsandbasesbutton.setTypeface(myTypeFace);
+
         acidsandbasesbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -43,7 +44,7 @@ public class Equilibria extends Activity {
             }
         });
         solubilitybutton = findViewById(R.id.solubility);
-        solubilitybutton.setTypeface(myTypeFace);
+
         solubilitybutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -51,9 +52,9 @@ public class Equilibria extends Activity {
             }
         });
         kineticsbutton = findViewById(R.id.kinetics);
-        kineticsbutton.setTypeface(myTypeFace);
+
         titrationcurvebutton= findViewById(R.id.titrationcurves);
-        titrationcurvebutton.setTypeface(myTypeFace);
+
         titrationcurvebutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V)
             {
@@ -66,9 +67,19 @@ public class Equilibria extends Activity {
                 openKinetics();
             }
         });
-        TextView e= findViewById(R.id.equilibria);
-        e.setTypeface(myTypeFace);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }
+            });
+        }
     }
     public void openKinetics()
     {
@@ -102,4 +113,12 @@ public class Equilibria extends Activity {
         Intent intent = new Intent(this, LawsOfThermodynamics.class);
         startActivity(intent);
     }*/
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+    public void openMain()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

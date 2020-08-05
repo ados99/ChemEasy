@@ -70,29 +70,32 @@ public class EndSlide extends Fragment {
         });
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.question);
-        txt.setTypeface(font);
-        choice1.setTypeface(font);
-        choice2.setTypeface(font);
-        choice3.setTypeface(font);
+
+
+
+
         TextView txt4 = (TextView) v.findViewById(R.id.endofsection);
-        txt4.setTypeface(font);
+
         txt4.setBackgroundColor(Color.parseColor(getResources().getString(this.color)));
         return v;
 
     }
 
     public void openQuiz() {
+        getActivity().finish();
         Intent intent = new Intent(getActivity(), GiantQuiz.class);
         intent.putExtra("Quiz",this.topic);
         startActivity(intent);
     }
 
     public void openMainActivity() {
+        getActivity().finish();
         Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
     }
 
     public void openElectronEnergyLevels() {
+        getActivity().finish();
         Intent intent = new Intent(getActivity(), this.beginning);
         startActivity(intent);
     }

@@ -1,20 +1,26 @@
 package com.example.chemme.MolecularStructure;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.app.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.chemme.MainActivity;
 import com.example.chemme.MolecularStructure.Bonding.Bonding;
 import com.example.chemme.MolecularStructure.Hybridization.Hybridization;
 import com.example.chemme.MolecularStructure.IMFs.IMFs;
 import com.example.chemme.MolecularStructure.VSEPR.VSEPR;
 import com.example.chemme.R;
 
-public class MolecularStructure extends Activity {
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
+public class MolecularStructure extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +67,26 @@ public class MolecularStructure extends Activity {
 
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/iceland.regular.ttf");
         TextView myTextView = findViewById(R.id.bondingbutton);
-        myTextView.setTypeface(myTypeFace);
+
         TextView myTextView2 = findViewById(R.id.vseprbutton);
-        myTextView2.setTypeface(myTypeFace);
+
         TextView myTextView3 = findViewById(R.id.hybridizationbutton);
-        myTextView3.setTypeface(myTypeFace);
+
         TextView myTextView4 = findViewById(R.id.imfbutton);
-        myTextView4.setTypeface(myTypeFace);
-        TextView myTextView5 = findViewById(R.id.molecularstructure);
-        myTextView5.setTypeface(myTypeFace);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openMain();
+                }
+            });
+        }
+
 
     }
     public void openBonding()
@@ -90,6 +107,15 @@ public class MolecularStructure extends Activity {
     public void openHybridization()
     {
         Intent intent = new Intent(this, Hybridization.class);
+        startActivity(intent);
+    }
+
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+    public void openMain()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

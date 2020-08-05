@@ -3,4 +3,7 @@
     <dimen name="em_width">347dp</dimen>
     <dimen name="em_height">200dp</dimen>
     <dimen name="periodic_table_width">397dp</dimen>
+    <dimen name="pb_height">320dp</dimen>
+    <dimen name="zeroth_width">657dp</dimen>
+    <dimen name="zeroth_height">513dp</dimen>
 </resources>
