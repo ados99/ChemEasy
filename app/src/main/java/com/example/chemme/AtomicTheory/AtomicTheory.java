@@ -18,7 +18,7 @@ import com.example.chemme.R;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
-public class AtomicTheory extends AppCompatActivity {
+public class AtomicTheory extends AppCompatActivity{
     private Button button;
     private Button periodicbutton;
     private Button trendsbutton;
@@ -29,6 +29,18 @@ public class AtomicTheory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atomic_theory);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if(toolbar!=null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
 
         button = findViewById(R.id.historyoftheatombutton);
@@ -66,20 +78,6 @@ public class AtomicTheory extends AppCompatActivity {
             {openElectronEnergyLevels();
             }
         });
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        if(toolbar!=null)
-        {
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
-
     }
 
     @Override
@@ -115,6 +113,11 @@ public class AtomicTheory extends AppCompatActivity {
     {
         Intent intent = new Intent(this, ElectronEnergyLevels.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 
 }

@@ -1,10 +1,24 @@
-<resources>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name = "android:icon"
+            android:title="Search"
+            android:id = "@+id/nav_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon = "@drawable/search"
+            app:actionViewClass = "android.widget.SearchView"
+            app:showAsAction="ifRoom|withText">
+        </item>
+        <item name="android:editTextColor">@android:color/white</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">60sp</item>
     </style>
 
     <style name="ToolbarColoredBackArrow" parent="AppTheme">

@@ -30,15 +30,17 @@
                 android:layout_height="60dp"
                 android:background="@android:color/black"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme">
+                android:theme="@style/ToolbarTheme">
+
                 <TextView
                     android:id="@+id/toolbarTextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="ChemEasy"
-                    android:gravity = "center"
                     android:textColor="@android:color/white"
-                    android:textSize = "35sp"/>
+                    android:layout_marginLeft="?android:attr/actionBarSize"
+                    android:textSize="35sp" />
             </androidx.appcompat.widget.Toolbar>
 
 
@@ -141,4 +143,29 @@
 
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/searchView"
+        android:layout_marginTop="60dp"
+        android:visibility="gone">
+        <ListView
+            android:id="@+id/lv_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+        </ListView>
+
+        <TextView
+            android:id="@+id/tv_emptyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:textSize = "25sp"
+            android:text = "No Results"
+            android:gravity="center"
+            android:layout_centerInParent = "true">
+        </TextView>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

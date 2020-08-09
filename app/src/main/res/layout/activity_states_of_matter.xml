@@ -37,7 +37,7 @@
                         android:id="@+id/toolbarTextView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Atomic Theory"
+                        android:text="States of Matter"
                         android:gravity = "center"
                         android:layout_marginRight="?android:attr/actionBarSize"
                         android:textColor="@android:color/white"

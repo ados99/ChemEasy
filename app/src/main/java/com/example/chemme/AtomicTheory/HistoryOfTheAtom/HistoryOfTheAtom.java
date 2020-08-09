@@ -21,12 +21,18 @@ public class HistoryOfTheAtom extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.pager);
         viewPager = findViewById(R.id.pager);
         viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
 
 
-
+        Bundle extras = getIntent().getExtras();
+        int position = 0;
+        if(extras != null) {
+            position = extras.getInt("viewpager_position");
+            viewPager.setCurrentItem(position);
+        }
 
 
         TabLayout navbar = findViewById(R.id.navbar);

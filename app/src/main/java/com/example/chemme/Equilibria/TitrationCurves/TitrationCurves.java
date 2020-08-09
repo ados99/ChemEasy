@@ -25,6 +25,12 @@ public class TitrationCurves extends AppCompatActivity {
         TitrationCurvesAdapter padapter = new TitrationCurvesAdapter(getSupportFragmentManager());
         viewPager.setAdapter(padapter);
 
+        Bundle extras = getIntent().getExtras();
+        int position = 0;
+        if(extras != null) {
+            position = extras.getInt("viewpager_position");
+            viewPager.setCurrentItem(position);
+        }
 
         TabLayout navbar = findViewById(R.id.navbar);
         navbar.setupWithViewPager(viewPager, true);

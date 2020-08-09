@@ -22,7 +22,7 @@ public class ZerothOrder extends Fragment {
         View v = inflater.inflate(R.layout.generic_slide, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/iceland.regular.ttf");
         TextView txt = (TextView) v.findViewById(R.id.title);
-        txt.setText("Zeroth Law");
+        txt.setText("Zero Order");
 
         txt.setBackgroundColor(Color.parseColor(getResources().getString(0+R.color.kinetics)));
         ImageView im = (ImageView)v.findViewById(R.id.image);

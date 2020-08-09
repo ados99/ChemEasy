@@ -108,4 +108,9 @@ public class StatesOfMatter extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

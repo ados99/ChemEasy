@@ -34,11 +34,11 @@
                         android:id="@+id/toolbarTextView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Thermodynamics"
+                        android:text="Thermochemistry"
                         android:gravity = "center"
                         android:layout_marginRight="?android:attr/actionBarSize"
                         android:textColor="@android:color/white"
-                        android:textSize = "35sp"/>
+                        android:textSize = "30sp"/>
                 </androidx.appcompat.widget.Toolbar>
 
                 <Button

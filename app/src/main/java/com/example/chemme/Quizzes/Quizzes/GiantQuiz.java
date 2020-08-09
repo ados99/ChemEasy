@@ -238,8 +238,7 @@ public class GiantQuiz extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Intent setIntent = new Intent(this, QuizzesMenu.class);
-        startActivity(setIntent);
+        finish();
     }
 
 }

@@ -76,7 +76,7 @@ public class Equilibria extends AppCompatActivity {
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    openMain();
+                    finish();
                 }
             });
         }
@@ -121,4 +121,9 @@ public class Equilibria extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 }

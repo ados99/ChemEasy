@@ -94,12 +94,12 @@ The table above shows some specific heat values for common materials. Notice tha
     <string name="second_order_content">In a second order reaction, the reaction rate depends either on the concentrations of one-second order reactant or two first-order reactants. In other words, the sum of the exponent in the rate law must equal 2. When graphed over time, 1/concentration of the reactant is a straight line with the slope of -k, while the 1/concentration of the product yields a straight line with a slope of k.</string>
     <string name="second_law_content">The second law of thermodynamics states that that the state of entropy of the entire universe will always increase over time. The second law also states that the changes in the entropy in the universe can never be negative. In a simpler sense, as time increases, a system will become more disordered.</string>
     <string name="references_content">"The following sources were used in researching the content/images.
-        • chem.libretexts.org/
-        • chemcollective.org/
-        • acs.org/
-        • chemed.chem.purdue.edu/genchem
-        • ocw.mit.edu/high-school/chemistry
-        • khanacademy.org/science/chemistry"</string>
+    • chem.libretexts.org
+    • chemcollective.org
+    • acs.org
+    • chemed.chem.purdue.edu/genchem
+    • ocw.mit.edu/high-school/chemistry
+    • khanacademy.org/science/chemistry"</string>
     <string name="reaction_rates_content">"The reaction rate is the speed at which reactants get converted into products. Four factors affect the reaction rate.
 
 1. Concentration of reactant: Increasing the concentration of one or more reactants will often increase the rate of reaction
@@ -250,4 +250,104 @@ Note that since noble gasses have full valence electron shells, they do not attr
 
     </string>
     <string name="intermolecular_forces_content">Previously, we studied bonds between atoms that made up molecules. However, there are also attractions that molecules have with each other, called Intermolecular forces (IMFs). These attractions vary based on the polarity and the electronegativity differences in atoms. Polar and more electronegative molecules can form stronger IMFs than those without these traits. It is important to note that molecules may have more than one IMF between them.</string>
+
+<string-array name="topics">
+    <item>History of the Atom</item>
+    <item>John Dalton</item>
+    <item>J.J. Thomson</item>
+    <item>Ernst Rutherford</item>
+    <item>Niels Bohr</item>
+    <item>Erwin Schrodinger</item>
+    <item>Parts of an Atom</item>
+    <item>Electromagnetic Spectrum</item>
+    <item>Parts of a Wave</item>
+    <item>Photons</item>
+    <item>The Periodic Table</item>
+    <item>Element Square</item>
+    <item>Metals and Nonmetals</item>
+    <item>Groups and Periods</item>
+    <item>Alkali Metals</item>
+    <item>Alkaline Earth Metals</item>
+    <item>Transition Metals</item>
+    <item>Halogens</item>
+    <item>Noble Gasses</item>
+    <item>Atomic Radius</item>
+    <item>Electronegativity</item>
+    <item>Ionization Energy</item>
+    <item>Electron Affinity</item>
+    <item>Energy Levels</item>
+    <item>Periodic Table Blocks</item>
+    <item>Electron Configuration</item>
+    <item>Quantum Numbers</item>
+    <item>Chemical Bonds</item>
+    <item>Ionic Bonding</item>
+    <item>Covalent Bonding</item>
+    <item>Polar Covalent Bonding</item>
+    <item>VSEPR Theory</item>
+    <item>VSEPR Table</item>
+    <item>Hybrid Orbitals</item>
+    <item>Sigma Bonds</item>
+    <item>Pi Bonds</item>
+    <item>Intermolecular Forces</item>
+    <item>London Dispersion Forces</item>
+    <item>Dipole-Dipole Forces</item>
+    <item>Hydrogen Bonding</item>
+    <item>Ion-Dipole Forces</item>
+    <item>Solids</item>
+    <item>Ionic Solids</item>
+    <item>Molecular Solids</item>
+    <item>Metallic Solids</item>
+    <item>Network Solids</item>
+    <item>Phase Diagrams</item>
+    <item>Phase Changes</item>
+    <item>Triple Point</item>
+    <item>Critical Point</item>
+    <item>Gasses</item>
+    <item>Charles\'s Law</item>
+    <item>Boyle\'s Law</item>
+    <item>Avogadro\'s Law</item>
+    <item>Ideal Gas Law</item>
+    <item>Kinetic Molecular Theory</item>
+    <item>Diffusion</item>
+    <item>Effusion</item>
+    <item>Graham\'s Law</item>
+    <item>Heating Curves</item>
+    <item>Cooling Curves</item>
+    <item>Specific Heat</item>
+    <item>System and Surroundings</item>
+    <item>Energy</item>
+    <item>Enthalpy</item>
+    <item>Entropy</item>
+    <item>Zeroth Law of Thermodynamics</item>
+    <item>First Law of Thermodynamics</item>
+    <item>Second Law of Thermodynamics</item>
+    <item>Third Law of Thermodynamics</item>
+    <item>Spontaneous Processes</item>
+    <item>Gibbs Free Energy</item>
+    <item>Negative Delta G</item>
+    <item>Kinetics</item>
+    <item>Reaction Rates</item>
+    <item>Rate Laws</item>
+    <item>Zero Order</item>
+    <item>First Order</item>
+    <item>Second Order</item>
+    <item>Arrhenius Theory</item>
+    <item>Bronsted-Lowry Theory</item>
+    <item>pH Scale</item>
+    <item>Strong Acid</item>
+    <item>Weak Acid</item>
+    <item>Strong Base</item>
+    <item>Weak Base</item>
+    <item>Neutralization</item>
+    <item>Le Chatlier\'s Principle</item>
+    <item>Solute Solvent Interactions</item>
+    <item>Common Ion Effect</item>
+    <item>Temperature Effects on Solubility</item>
+    <item>Pressure Effects on Solubility</item>
+    <item>Titrations</item>
+    <item>Titration Curves</item>
+    <item>Strong acid - Strong base titration</item>
+    <item>Weak base - Strong acid titration</item>
+    <item>Weak acid - Strong base titration</item>
+</string-array>
 </resources>

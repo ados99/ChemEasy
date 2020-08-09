@@ -62,11 +62,6 @@ public class About extends AppCompatActivity {
                 openReferences();
             }
         });
-
-
-
-
-
     }
 
     public void openAboutTheApp()
@@ -94,5 +89,10 @@ public class About extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

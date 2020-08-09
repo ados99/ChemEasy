@@ -267,7 +267,6 @@ public class QuizzesMenu extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Intent setIntent = new Intent(this,MainActivity.class);
-        startActivity(setIntent);
+        finish();
     }
 }
